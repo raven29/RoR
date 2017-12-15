@@ -1,0 +1,15 @@
+Write a simple web-based organizer of outgoing email messages. 
+
+Functional requirements are:
+
+* No actual emailing functionality is required.
+* Each message must hold recipient's email address, subject and text.
+* Messages must be able to be created, modified, moved to trash and deleted permanently, marked as important (and unmarked, of course), and viewed both within a list and individually.
+* It must be possible to search for messages matching a given substring of the subject.
+* There are no specific requirements regarding the user interface, except that it must be user-friendly. You have to make a decision about what is user-friendly on your own.
+
+Implementation requirements are:
+
+* Programming language: Ruby.
+* Web framework: Merb or Rails
+* Unit testing is required.

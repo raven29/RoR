@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+wrong:
+  address: wrong
+  subject: some subj
+  body: some Text
+  important: false
+  deleted: false
+  sent: true
+
+right:
+  address: fx@abc.com
+  subject: SubjectString
+  body: BodyString
+  important: false
+  deleted: false
+  sent: false

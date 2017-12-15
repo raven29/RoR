@@ -1,0 +1,21 @@
+<h1 style="margin-left:250px;">Listing emails</h1>
+<table><tr><td width="120" valign="top" style="border-right:#cccccc solid 2px;">
+<%= link_to_remote 'Drafts', {:url=>{:action=>'drafts'}, :update=>'td_output', :complete=>"$$('a.active').each(function(el) {el.removeClassName('active')});$('link_drafts').addClassName('active');"}, :class=>'active', :id=>'link_drafts' %>
+<br />
+<br />
+<%= link_to_remote 'Sent', {:url=>{:action=>'sent'}, :update=>'td_output', :complete=>"$$('a.active').each(function(el) {el.removeClassName('active')});$('link_sent').addClassName('active');"}, :id=>'link_sent' %>
+<br />
+<br />
+<%= link_to_remote 'Trash', {:url=>{:action=>'trash'}, :update=>'td_output', :complete=>"$$('a.active').each(function(el) {el.removeClassName('active')}); $('link_trash').addClassName('active')"}, :id=>'link_trash' %>
+</td>
+
+<td id="td_output">
+
+<%= render :partial=>'emails/drafts' %>
+
+</td></tr></table>
+
+<br />
+
+<%= link_to 'New email', new_email_path, :style=>'margin-right:8px;' %>
+<%= link_to 'Search email', search_emails_path %>

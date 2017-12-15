@@ -1,0 +1,49 @@
+<hr />
+<h3>Important</h3>
+<table border="0" cellpadding="5" cellspacing="0" bordercolor="#cccccc">
+  <tr align="left">
+    <th width="100">Address</th>
+    <th width="100">Subject</th>
+	<th width="200">Created</th>
+	<th width="200">Modified</th>
+	<th colspan="4" width="80" align="center">Action</th>
+  </tr>
+<% for email in @emails_important %>
+  <tr class="important" <%= "id='row_#{email.id}'" %>>
+    <td><%=h email.address %></td>
+    <td><%=h email.subject %></td>
+	<td><%=h email.created_at %></td>
+	<td><%=h email.updated_at %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to_remote 'Delete', :url=>{:action=>'delete',:id=>email.id}, :confirm => 'Remove to trash?', :method => :put, :complete=>"$('row_#{email.id}').remove();" %></td>
+	<td><%= link_to 'Edit', edit_email_path(email) %></td>
+	<td><%= link_to_remote 'Send', :url=>{:action=>'send_message',:id=>email.id}, :confirm => 'Sure?', :method => :put, :complete=>"$('row_#{email.id}').remove();" %></td>
+  </tr>
+<% end %>
+</table>
+<hr />
+<h3>Ordinary</h3>
+<table border="0" cellpadding="5" cellspacing="0" bordercolor="#cccccc">
+  <tr align="left">
+    <th width="100">Address</th>
+    <th width="100">Subject</th>
+	<th width="200">Created</th>
+	<th width="200">Modified</th>
+	<th colspan="4" width="80" align="center">Action</th>
+  </tr>
+
+<% for email in @emails_ordinary %>
+  <tr <%= "id='row_#{email.id}'" %>>
+    <td><%=h email.address %></td>
+    <td><%=h email.subject %></td>
+	<td><%=h email.created_at %></td>
+	<td><%=h email.updated_at %></td>
+    <td><%= link_to 'Show', email %></td>
+    <td><%= link_to_remote 'Delete', :url=>{:action=>'delete',:id=>email.id}, :confirm => 'Remove to trash?', :method => :put, :complete=>"$('row_#{email.id}').remove();" %></td>
+	<td><%= link_to 'Edit', edit_email_path(email) %></td>
+	<td><%= link_to_remote 'Send', :url=>{:action=>'send_message',:id=>email.id}, :confirm => 'Sure?', :method => :put, :complete=>"$('row_#{email.id}').remove();" %></td>
+  </tr>
+<% end %>
+</table>
+<hr />
+
